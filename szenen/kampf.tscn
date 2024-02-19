@@ -1,0 +1,271 @@
+[gd_scene load_steps=10 format=3 uid="uid://d214fq4hq7n0q"]
+
+[ext_resource type="Script" path="res://szenen/kampf.gd" id="1_gx21j"]
+[ext_resource type="Texture2D" uid="uid://bi7i3g2kvp8ur" path="res://assets/background/kampf.webp" id="1_thqgu"]
+[ext_resource type="PackedScene" uid="uid://dotkf8jmm2drk" path="res://szenen/vertrauter.tscn" id="1_wbghr"]
+[ext_resource type="PackedScene" uid="uid://b6et5gurmx141" path="res://szenen/gegner.tscn" id="2_0h6xi"]
+[ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="4_x6ked"]
+[ext_resource type="PackedScene" uid="uid://xbcb7w5xi5sh" path="res://szenen/dice.tscn" id="5_lp7pc"]
+[ext_resource type="Script" path="res://szenen/DiceTray.gd" id="5_r8g1j"]
+
+[sub_resource type="Theme" id="Theme_28dro"]
+
+[sub_resource type="Theme" id="Theme_wrqrp"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1921.0
+offset_bottom = 1082.0
+texture = ExtResource("1_thqgu")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Kampf" type="MarginContainer" parent="." node_paths=PackedStringArray("spieler", "gegner")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gx21j")
+spieler = NodePath("VBoxContainer/BattleView/VertrauterWrapper/Vertrauter")
+gegner = NodePath("VBoxContainer/BattleView/GegnerWrapper/Gegner")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kampf"]
+layout_mode = 2
+
+[node name="BattleView" type="HSplitContainer" parent="Kampf/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VertrauterWrapper" type="CenterContainer" parent="Kampf/VBoxContainer/BattleView"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Vertrauter" parent="Kampf/VBoxContainer/BattleView/VertrauterWrapper" instance=ExtResource("1_wbghr")]
+layout_mode = 2
+
+[node name="GegnerWrapper" type="CenterContainer" parent="Kampf/VBoxContainer/BattleView"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gegner" parent="Kampf/VBoxContainer/BattleView/GegnerWrapper" instance=ExtResource("2_0h6xi")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="DiceView" type="ColorRect" parent="Kampf/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_28dro")
+color = Color(0, 0, 0, 0.639216)
+
+[node name="DiceTray" type="HBoxContainer" parent="Kampf/VBoxContainer/DiceView"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_r8g1j")
+
+[node name="Dice1" parent="Kampf/VBoxContainer/DiceView/DiceTray" instance=ExtResource("5_lp7pc")]
+layout_mode = 2
+value = 2
+
+[node name="Spielbereich" type="ColorRect" parent="Kampf/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme = SubResource("Theme_wrqrp")
+color = Color(0, 0, 0, 0.639216)
+
+[node name="MarginContainer" type="MarginContainer" parent="Kampf/VBoxContainer/Spielbereich"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = -11.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBereich" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Attacken" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Atk1" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../../Menu/Held")
+focus_neighbor_right = NodePath("../Atk2")
+focus_next = NodePath("../Atk2")
+focus_previous = NodePath("../../Menu/Held")
+theme = ExtResource("4_x6ked")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_x6ked")
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Feuerball"
+
+[node name="Würfel" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 3
+
+[node name="Beschreibung" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Für jedes Magiersymbol im Wurf, macht dieser Angriff +1 Schaden."
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Atk2" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_x6ked")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_x6ked")
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Magische Geschosse"
+
+[node name="Würfel" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 3
+
+[node name="Beschreibung" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Jedes Magiersymbol wird mit dem Magie Wert multipliziert und macht Schaden."
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Atk3" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_x6ked")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_x6ked")
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heilkugel"
+
+[node name="Würfel" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 3
+
+[node name="Beschreibung" type="Label" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Der Wert des Würfelwurfes wird dem HP des Zauberers hinzugefügt."
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Menu" type="VBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Held" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_x6ked")
+text = "Held
+"
+
+[node name="Rucksack" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_x6ked")
+text = "Rucksack
+"
+
+[node name="Flucht" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_x6ked")
+text = "Flucht"
+
+[node name="Auto" type="Button" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_x6ked")
+text = "Auto
+"
+
+[connection signal="results_ready" from="Kampf/VBoxContainer/DiceView/DiceTray" to="Kampf" method="_on_dice_tray_results_ready"]
+[connection signal="mouse_entered" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_1_mouse_entered"]
+[connection signal="pressed" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk1" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_1_pressed"]
+[connection signal="mouse_entered" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_2_mouse_entered"]
+[connection signal="pressed" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_2_pressed"]
+[connection signal="mouse_entered" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_3_mouse_entered"]
+[connection signal="pressed" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_3_pressed"]

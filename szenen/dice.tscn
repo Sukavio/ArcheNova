@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://xbcb7w5xi5sh"]
+
+[ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_ai0yl"]
+[ext_resource type="Script" path="res://szenen/dice.gd" id="2_uptr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdjjl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_mcdwd"]
+default_font = ExtResource("1_ai0yl")
+default_font_size = 25
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_kdjjl")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eadim"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_alg44"]
+font = ExtResource("1_ai0yl")
+font_color = Color(0.0627451, 0, 0.992157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_meiet"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8afh"]
+font = ExtResource("1_ai0yl")
+font_color = Color(0.537255, 0.537255, 0, 1)
+
+[node name="Dice" type="Label"]
+custom_minimum_size = Vector2(70, 70)
+size_flags_horizontal = 6
+theme = SubResource("Theme_mcdwd")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_uptr1")
+
+[node name="Magie" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 6.0
+offset_right = 63.0
+offset_bottom = 22.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eadim")
+text = "M"
+label_settings = SubResource("LabelSettings_alg44")
+
+[node name="Ausdauer" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 24.0
+offset_bottom = 22.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_meiet")
+text = "A"
+label_settings = SubResource("LabelSettings_o8afh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

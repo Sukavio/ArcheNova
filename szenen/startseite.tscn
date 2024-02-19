@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfeaih2g0amqm"]
+
+[ext_resource type="Texture2D" uid="uid://caqk8kgy5c73o" path="res://assets/background/background.webp" id="1_acb7c"]
+[ext_resource type="Script" path="res://szenen/startseite.gd" id="1_tjmsd"]
+[ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_b3fcn"]
+[ext_resource type="PackedScene" uid="uid://dotkf8jmm2drk" path="res://szenen/vertrauter.tscn" id="3_afdd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io1gi"]
+content_margin_top = 106.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u26w7"]
+font = ExtResource("2_b3fcn")
+font_size = 57
+font_color = Color(0.819608, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Startseite" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjmsd")
+
+[node name="Hintergrund" type="Sprite2D" parent="."]
+scale = Vector2(1.07199, 1.05469)
+texture = ExtResource("1_acb7c")
+centered = false
+
+[node name="ArcheNova" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 15.01
+theme_override_styles/normal = SubResource("StyleBoxEmpty_io1gi")
+text = "Arche Nova"
+label_settings = SubResource("LabelSettings_u26w7")
+horizontal_alignment = 1
+
+[node name="Vertrauter" parent="." instance=ExtResource("3_afdd8")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+alignment = 1
+atk = 7
+speed = 6
+def = 8
+hp = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="damaged" from="Vertrauter" to="." method="_on_vertrauter_damaged"]
+[connection signal="died" from="Vertrauter" to="." method="_on_vertrauter_died"]
+[connection signal="healed" from="Vertrauter" to="." method="_on_vertrauter_healed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

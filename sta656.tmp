@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfeaih2g0amqm"]
+[gd_scene load_steps=6 format=3 uid="uid://cfeaih2g0amqm"]
 
 [ext_resource type="Texture2D" uid="uid://caqk8kgy5c73o" path="res://assets/background/background.webp" id="1_acb7c"]
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_b3fcn"]
+[ext_resource type="PackedScene" uid="uid://dotkf8jmm2drk" path="res://vertrauter.tscn" id="3_afdd8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io1gi"]
 content_margin_top = 106.0
@@ -30,3 +31,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_io1gi")
 text = "Arche Nova"
 label_settings = SubResource("LabelSettings_u26w7")
 horizontal_alignment = 1
+
+[node name="Vertrauter" parent="." instance=ExtResource("3_afdd8")]
+layout_mode = 2
+size_flags_horizontal = 0
