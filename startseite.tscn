@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfeaih2g0amqm"]
+
+[ext_resource type="Texture2D" uid="uid://caqk8kgy5c73o" path="res://assets/background/background.webp" id="1_acb7c"]
+[ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_b3fcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io1gi"]
+content_margin_top = 106.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u26w7"]
+font = ExtResource("2_b3fcn")
+font_size = 57
+font_color = Color(0.819608, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Startseite" type="PanelContainer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Hintergrund" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+scale = Vector2(0.642857, 0.632813)
+texture = ExtResource("1_acb7c")
+
+[node name="ArcheNova" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 15.01
+theme_override_styles/normal = SubResource("StyleBoxEmpty_io1gi")
+text = "Arche Nova"
+label_settings = SubResource("LabelSettings_u26w7")
+horizontal_alignment = 1
