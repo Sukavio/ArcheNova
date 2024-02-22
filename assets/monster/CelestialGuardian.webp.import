@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://ucvrdy5xkrfn"
+path="res://.godot/imported/CelestialGuardian.webp-c4620be8aff6557efb93a1281ab1c612.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/CelestialGuardian.webp"
+dest_files=["res://.godot/imported/CelestialGuardian.webp-c4620be8aff6557efb93a1281ab1c612.ctex"]
 
 [params]
 

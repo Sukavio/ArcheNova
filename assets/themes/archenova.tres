@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://dcsergoogpj0s"]
 
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_g5pfb"]
+[ext_resource type="StyleBox" uid="uid://dj3ywj51shw3t" path="res://assets/themes/greenbackground_whiteborder.tres" id="1_nuhl7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm8n4"]
 bg_color = Color(0.027451, 0.0784314, 0, 1)
@@ -26,17 +27,6 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k3go"]
 bg_color = Color(0.462745, 0.784314, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7y8i"]
-bg_color = Color(0.34902, 0.6, 0, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -78,7 +68,7 @@ default_font_size = 16
 Button/styles/disabled = SubResource("StyleBoxFlat_gm8n4")
 Button/styles/focus = SubResource("StyleBoxFlat_ugmg7")
 Button/styles/hover = SubResource("StyleBoxFlat_5k3go")
-Button/styles/normal = SubResource("StyleBoxFlat_t7y8i")
+Button/styles/normal = ExtResource("1_nuhl7")
 Button/styles/pressed = SubResource("StyleBoxFlat_m7obn")
 ProgressBar/constants/outline_size = 2
 ProgressBar/styles/background = SubResource("StyleBoxFlat_hl2ys")

@@ -13,51 +13,51 @@ enum Element {Fire, Water, Earth, Metal, Wood}
 
 const DATA: Dictionary = {
 	 AbyssalShadow:
-		 [2, 2, 2, 2, 2, false, Element.Earth],
+		 ['AbyssalShadow', 2, 2, 2, 2, 2, false, Element.Earth],
 	 BreezyWooler:
-		 [2, 2, 2, 2, 2, false, Element.Wood],
+		 ['BreezyWooler', 2, 2, 2, 2, 2, false, Element.Wood],
 	 CelestialGuardian:
-		 [2, 2, 2, 2, 2, false, Element.Metal],
+		 ['CelestialGuardian', 2, 2, 2, 2, 2, false, Element.Metal],
 	 CluckstertheMystic:
-		 [2, 2, 2, 2, 2, false, Element.Wood],
+		 ['CluckstertheMystic', 2, 2, 2, 2, 2, false, Element.Wood],
 	 CrystalWyrm:
-		 [2, 2, 2, 2, 2, false, Element.Metal],
+		 ['CrystalWyrm', 2, 2, 2, 2, 2, false, Element.Metal],
 	 DeathWitch:
-		 [2, 2, 2, 2, 2, false, Element.Fire],
+		 ['DeathWitch', 2, 2, 2, 2, 2, false, Element.Fire],
 	 Dragoblin:
-		 [2, 2, 2, 2, 2, true, Element.Fire],
+		 ['Dragoblin', 2, 2, 2, 2, 2, true, Element.Fire],
 	 EternalFrostWarden:
-		 [2, 2, 2, 2, 2, true, Element.Water],
+		 ['EternalFrostWarden', 2, 2, 2, 2, 2, true, Element.Water],
 	 FlameheartBeast:
-		 [2, 2, 2, 2, 2, false, Element.Fire],
+		 ['FlameheartBeast', 2, 2, 2, 2, 2, false, Element.Fire],
 	 ForestFidget:
-		 [2, 2, 2, 2, 2, false, Element.Wood],
+		 ['ForestFidget', 2, 2, 2, 2, 2, false, Element.Wood],
 	 LuminousBloom:
-		 [2, 2, 2, 2, 2, false, Element.Wood],
+		 ['LuminousBloom', 2, 2, 2, 2, 2, false, Element.Wood],
 	 MeadowMischief:
-		 [2, 2, 2, 2, 2, false, Element.Wood],
+		 ['MeadowMischief', 2, 2, 2, 2, 2, false, Element.Wood],
 	 MoonlightHopper:
-		 [2, 2, 2, 2, 2, true, Element.Water],
+		 ['MoonlightHopper', 2, 2, 2, 2, 2, true, Element.Water],
 	 NightsongSpecter:
-		 [2, 2, 2, 2, 2, true, Element.Earth],
+		 ['NightsongSpecter', 2, 2, 2, 2, 2, true, Element.Earth],
 	 Phoenix:
-		 [2, 2, 2, 2, 2, true, Element.Fire],
+		 ['Phoenix', 2, 2, 2, 2, 2, true, Element.Fire],
 	 StormbringerWyrm:
-		 [2, 2, 2, 2, 2, false, Element.Water],
+		 ['StormbringerWyrm', 2, 2, 2, 2, 2, false, Element.Water],
 	 StormscaleLeviathan:
-		 [2, 2, 2, 2, 2, false, Element.Water],
+		 ['StormscaleLeviathan', 2, 2, 2, 2, 2, false, Element.Water],
 	 Thunderhoof:
-		 [2, 2, 2, 2, 2, false, Element.Water],
+		 ['Thunderhoof', 2, 2, 2, 2, 2, false, Element.Water],
 	 TimeWeaver:
-		 [2, 2, 2, 2, 2, true, Element.Water],
+		 ['TimeWeaver', 2, 2, 2, 2, 2, true, Element.Water],
 	 VoidStalker:
-		 [2, 2, 2, 2, 2, true, Element.Earth],
+		 ['VoidStalker', 2, 2, 2, 2, 2, true, Element.Earth],
 	 WhisperingShade:
-		 [2, 2, 2, 2, 2, true, Element.Fire],
+		 ['WhisperingShade', 2, 2, 2, 2, 2, true, Element.Fire],
 	 Widbear:
-		 [2, 2, 2, 2, 2, true, Element.Wood],
+		 ['Widbear', 2, 2, 2, 2, 2, true, Element.Wood],
 	 Zephyrclaw:
-		 [2, 2, 2, 2, 2, false, Element.Metal],
+		 ['Zephyrclaw', 2, 2, 2, 2, 2, false, Element.Metal],
 }
 
 static func rand():

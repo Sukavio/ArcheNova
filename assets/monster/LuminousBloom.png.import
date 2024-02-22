@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://q7kf0560m07e"
+path="res://.godot/imported/LuminousBloom.png-d54c58ded2e1f1023d90404199d24987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/LuminousBloom.png"
+dest_files=["res://.godot/imported/LuminousBloom.png-d54c58ded2e1f1023d90404199d24987.ctex"]
 
 [params]
 

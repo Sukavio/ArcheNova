@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://cb382i0fhqwa5"
+path="res://.godot/imported/StormscaleLeviathan.png-3b25bf215fef0cce00630bb155391b2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/StormscaleLeviathan.png"
+dest_files=["res://.godot/imported/StormscaleLeviathan.png-3b25bf215fef0cce00630bb155391b2a.ctex"]
 
 [params]
 

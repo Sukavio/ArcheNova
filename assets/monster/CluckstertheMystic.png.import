@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://f4r5aqe7kj75"
+path="res://.godot/imported/CluckstertheMystic.png-0b40fce9d8fe63235bc2cd6f50b9621a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/CluckstertheMystic.png"
+dest_files=["res://.godot/imported/CluckstertheMystic.png-0b40fce9d8fe63235bc2cd6f50b9621a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://bfw5dsunwtu2g"
+path="res://.godot/imported/MoonlightHopper.png-d7879d54da2783777d567c0f1cb636f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/MoonlightHopper.png"
+dest_files=["res://.godot/imported/MoonlightHopper.png-d7879d54da2783777d567c0f1cb636f4.ctex"]
 
 [params]
 

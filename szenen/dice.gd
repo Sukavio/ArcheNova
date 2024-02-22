@@ -2,11 +2,9 @@ class_name Dice extends Label
 
 @export_range(0, 2) var value := 1
 @export var magic := false
-@export var ausdauer := false
+@export var held := false
 
-var stop_rolling = false
-
-signal result_ready
+var stop_rolling = 0
 
 func _process(delta):
 	if value > 0:
@@ -14,23 +12,18 @@ func _process(delta):
 	else:
 		text = ""
 	$Magie.visible = magic
-	$Ausdauer.visible = ausdauer
+	$Held.visible = held
 
 
 func _on_timer_timeout():
-	value = clampi(randi_range(0, 5), 0, 2)
-	if value == 1:
-		value = 2
-	elif value == 2:
-		value = 1
-	magic = randi_range(0, 5) >= 3
-	ausdauer = randi_range(0, 5) >= 4
-	if stop_rolling:
-		$Timer.stop()
-		result_ready.emit(self)
+	roll()
 
 func stop():
-	stop_rolling = true
+	$Timer.stop()
+	roll()
+
+func start():
+	$Timer.start()
 
 func krit():
 	return value == 2
@@ -39,4 +32,13 @@ func status():
 	return value == 0
 	
 func hit():
-	return value > 0
+	return value == 1
+	
+func roll():
+	value = clampi(randi_range(0, 5), 0, 2)
+	if value == 1:
+		value = 2
+	elif value == 2:
+		value = 1
+	magic = randi_range(0, 5) >= 3
+	held = randi_range(0, 5) >= 4

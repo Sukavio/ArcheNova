@@ -24,7 +24,7 @@ func _ready():
 	hp_value = hp * hp_scale
 	previes_hp_value = hp_value
 
-func _process(delta):
+func _process(_delta):
 	hp_value = clampi(hp_value, 0, hp * hp_scale)
 		
 	if hp_value != previes_hp_value:

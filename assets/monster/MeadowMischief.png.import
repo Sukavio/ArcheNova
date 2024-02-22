@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://dv687xuf5bguf"
+path="res://.godot/imported/MeadowMischief.png-b73fee3afda39b604c093f783f4d846f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/MeadowMischief.png"
+dest_files=["res://.godot/imported/MeadowMischief.png-b73fee3afda39b604c093f783f4d846f.ctex"]
 
 [params]
 

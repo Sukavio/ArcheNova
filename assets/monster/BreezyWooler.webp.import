@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://b7cdak52ocsa4"
+path="res://.godot/imported/BreezyWooler.webp-29259d32919280f31c00dc15ea98431c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/BreezyWooler.webp"
+dest_files=["res://.godot/imported/BreezyWooler.webp-29259d32919280f31c00dc15ea98431c.ctex"]
 
 [params]
 

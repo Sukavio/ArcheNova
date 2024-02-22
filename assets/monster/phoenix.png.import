@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://htxs1vfwxvfm"
-path="res://.godot/imported/phoenix.png-eb64835e522e628c82168c825bc3f2c2.ctex"
+path="res://.godot/imported/Phoenix.png-e1428dec550f140fea09a781fb69458b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/phoenix.png"
-dest_files=["res://.godot/imported/phoenix.png-eb64835e522e628c82168c825bc3f2c2.ctex"]
+source_file="res://assets/monster/Phoenix.png"
+dest_files=["res://.godot/imported/Phoenix.png-e1428dec550f140fea09a781fb69458b.ctex"]
 
 [params]
 

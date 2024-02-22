@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="3_y2umm"]
 [ext_resource type="LabelSettings" uid="uid://nkhyhk68h2y0" path="res://labelSettings/progressbar_label_settings.tres" id="4_npsrl"]
 [ext_resource type="Script" path="res://szenen/Label.gd" id="5_hdfae"]
-[ext_resource type="Texture2D" uid="uid://bjpkidbart75u" path="res://assets/monster/dragoblin.png" id="6_m6c6t"]
+[ext_resource type="Texture2D" uid="uid://bjpkidbart75u" path="res://assets/monster/Dragoblin.png" id="6_m6c6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54ldb"]
 bg_color = Color(0, 0.478431, 0.0862745, 1)
@@ -203,8 +203,3 @@ horizontal_alignment = 3
 vertical_alignment = 3
 script = SubResource("GDScript_pdc48")
 statname = "Rüstung"
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

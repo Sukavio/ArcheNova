@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://dwx7sp5cn8unw"
+path="res://.godot/imported/TimeWeaver.png-06d46251fb1a76615a2b1ad0ec84003e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/TimeWeaver.png"
+dest_files=["res://.godot/imported/TimeWeaver.png-06d46251fb1a76615a2b1ad0ec84003e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://p2p20t1cf4s5"
+path="res://.godot/imported/DeathWitch.webp-89863c42930c8636cf2c0e93a919917a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/DeathWitch.webp"
+dest_files=["res://.godot/imported/DeathWitch.webp-89863c42930c8636cf2c0e93a919917a.ctex"]
 
 [params]
 

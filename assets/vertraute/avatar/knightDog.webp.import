@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://c2024iivbev0f"
+path="res://.godot/imported/knightDog.webp-3830eceffd8928ed653911c667705c5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/vertraute/avatar/knightDog.webp"
+dest_files=["res://.godot/imported/knightDog.webp-3830eceffd8928ed653911c667705c5e.ctex"]
 
 [params]
 

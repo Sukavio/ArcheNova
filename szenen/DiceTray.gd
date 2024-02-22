@@ -9,13 +9,10 @@ var hit = 0
 var krit = 0
 var status = 0
 var magic = 0
-var ausdauer = 0
-
-var dice_count = 0
+var held = 0
 
 signal results_ready
 
-	
 func _on_atk_1_mouse_entered():
 	change_dices(5)
 
@@ -55,24 +52,28 @@ func auswerten():
 	krit = 0
 	status = 0
 	magic = 0
-	ausdauer = 0
-	dice_count = %DiceTray.get_child_count()
+	held = 0
+	for dice in %DiceTray.get_children():
+		dice.stop()
+		if dice.hit():
+			hit += 1
+		if dice.krit():
+			krit += 1
+		if dice.status():
+			status += 1
+		if dice.magic:
+			magic += 1
+		if dice.held:
+			held += 1
+	results_ready.emit()
+		
+func next(dices: int):
+	change_dices(dices)
 	for x in %DiceTray.get_children():
-		x.connect("result_ready", _on_result_ready)
-		x.stop()
-	
-func _on_result_ready(dice: Dice):
-	if dice.hit():
-		hit += 1
-	if dice.krit():
-		krit += 1
-	if dice.status():
-		status += 1
-	if dice.magic:
-		magic += 1
-	if dice.ausdauer:
-		ausdauer += 1
-	dice.disconnect("result_ready", _on_result_ready)
-	dice_count -= 1
-	if (dice_count == 0):
-		results_ready.emit()
+		x.roll()
+	auswerten()
+		
+func unpause():
+	_pause_scene = false
+	for x in %DiceTray.get_children():
+		x.start()

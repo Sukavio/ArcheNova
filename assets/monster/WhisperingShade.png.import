@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://tvmlog2jm8rk"
+path="res://.godot/imported/WhisperingShade.png-aa098c7dccdfa3368dcc6ca6ac5e31fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/WhisperingShade.png"
+dest_files=["res://.godot/imported/WhisperingShade.png-aa098c7dccdfa3368dcc6ca6ac5e31fc.ctex"]
 
 [params]
 

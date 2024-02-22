@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w1p61sqjr2n"
-path="res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"
+uid="uid://dttrbsvhkvjr3"
+path="res://.godot/imported/Thunderhoof.webp-2856caba683467e2544fd9df31901b1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/Widbear.png"
-dest_files=["res://.godot/imported/Widbear.png-564438fc721c69de50a71e024785fa96.ctex"]
+source_file="res://assets/monster/Thunderhoof.webp"
+dest_files=["res://.godot/imported/Thunderhoof.webp-2856caba683467e2544fd9df31901b1c.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d214fq4hq7n0q"]
+[gd_scene load_steps=11 format=3 uid="uid://d214fq4hq7n0q"]
 
 [ext_resource type="Script" path="res://szenen/kampf.gd" id="1_gx21j"]
 [ext_resource type="Texture2D" uid="uid://bi7i3g2kvp8ur" path="res://assets/background/kampf.webp" id="1_thqgu"]
@@ -11,6 +11,21 @@
 [sub_resource type="Theme" id="Theme_28dro"]
 
 [sub_resource type="Theme" id="Theme_wrqrp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cnqa"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.34902, 0.6, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -99,6 +114,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Attacken" type="HBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -230,6 +246,18 @@ autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="Dialog" type="RichTextLabel" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cnqa")
+bbcode_enabled = true
+text = "Du hast 30 Schaden gemacht!"
+fit_content = true
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Menu" type="VBoxContainer" parent="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
@@ -269,3 +297,4 @@ text = "Auto
 [connection signal="pressed" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk2" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_2_pressed"]
 [connection signal="mouse_entered" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_3_mouse_entered"]
 [connection signal="pressed" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Attacken/Atk3" to="Kampf/VBoxContainer/DiceView/DiceTray" method="_on_atk_3_pressed"]
+[connection signal="gui_input" from="Kampf/VBoxContainer/Spielbereich/MarginContainer/MenuBereich/Dialog" to="Kampf" method="_on_dialog_gui_input"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjpkidbart75u"
-path="res://.godot/imported/dragoblin.png-2ba7716bda5db9e56243831832fce14f.ctex"
+path="res://.godot/imported/Dragoblin.png-614caa01c7484c9655282e235407bec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monster/dragoblin.png"
-dest_files=["res://.godot/imported/dragoblin.png-2ba7716bda5db9e56243831832fce14f.ctex"]
+source_file="res://assets/monster/Dragoblin.png"
+dest_files=["res://.godot/imported/Dragoblin.png-614caa01c7484c9655282e235407bec2.ctex"]
 
 [params]
 

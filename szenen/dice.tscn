@@ -35,7 +35,7 @@ font_color = Color(0.0627451, 0, 0.992157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o8afh"]
 font = ExtResource("1_ai0yl")
-font_color = Color(0.537255, 0.537255, 0, 1)
+font_color = Color(0.85098, 0.0117647, 0.215686, 1)
 
 [node name="Dice" type="Label"]
 custom_minimum_size = Vector2(70, 70)
@@ -56,13 +56,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_eadim")
 text = "M"
 label_settings = SubResource("LabelSettings_alg44")
 
-[node name="Ausdauer" type="Label" parent="."]
+[node name="Held" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 6.0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_meiet")
-text = "A"
+text = "H"
 label_settings = SubResource("LabelSettings_o8afh")
 
 [node name="Timer" type="Timer" parent="."]
