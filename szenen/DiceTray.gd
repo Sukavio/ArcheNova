@@ -25,13 +25,13 @@ func _on_atk_3_mouse_entered():
 	change_dices(1)
 
 func _on_atk_1_pressed():
-	auswerten()
+	auswerten(1)
 
 func _on_atk_2_pressed():
-	auswerten()
+	auswerten(2)
 
 func _on_atk_3_pressed():
-	auswerten()
+	auswerten(3)
 
 func change_dices(count: int):
 	if !_pause_scene:
@@ -46,7 +46,7 @@ func change_dices(count: int):
 				for x in range(0, count - dice_counts):
 					%DiceTray.add_child(dices.instantiate())
 					
-func auswerten():
+func auswerten(moveNr: int):
 	_pause_scene = true
 	hit = 0
 	krit = 0
@@ -65,13 +65,13 @@ func auswerten():
 			magic += 1
 		if dice.held:
 			held += 1
-	results_ready.emit()
+	results_ready.emit(moveNr)
 		
 func next(dices: int):
 	change_dices(dices)
 	for x in %DiceTray.get_children():
 		x.roll()
-	auswerten()
+	auswerten(1)
 		
 func unpause():
 	_pause_scene = false

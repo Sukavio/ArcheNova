@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6et5gurmx141"]
+[gd_scene load_steps=15 format=3 uid="uid://b6et5gurmx141"]
 
 [ext_resource type="Script" path="res://szenen/gegner.gd" id="1_83tj0"]
 [ext_resource type="LabelSettings" uid="uid://pe7gqgwcvtjx" path="res://labelSettings/name_label_settings.tres" id="2_3m8cf"]
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="3_y2umm"]
-[ext_resource type="LabelSettings" uid="uid://nkhyhk68h2y0" path="res://labelSettings/progressbar_label_settings.tres" id="4_npsrl"]
+[ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_qwcfp"]
 [ext_resource type="Script" path="res://szenen/Label.gd" id="5_hdfae"]
 [ext_resource type="Texture2D" uid="uid://bjpkidbart75u" path="res://assets/monster/Dragoblin.png" id="6_m6c6t"]
 
@@ -18,6 +18,17 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_ud8b0"]
+line_spacing = 5.0
+font = ExtResource("4_qwcfp")
+font_size = 30
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8kxy"]
+font_size = 57
+font_color = Color(0.698039, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ratmt"]
 content_margin_left = 20.0
@@ -127,7 +138,7 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "10 / 20"
-label_settings = ExtResource("4_npsrl")
+label_settings = SubResource("LabelSettings_ud8b0")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_hdfae")
@@ -140,6 +151,17 @@ layout_mode = 2
 texture = ExtResource("6_m6c6t")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Alpha" type="Label" parent="Avatar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "α"
+label_settings = SubResource("LabelSettings_v8kxy")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="GridContainer" parent="Avatar"]
 layout_mode = 1

@@ -61,4 +61,5 @@ const DATA: Dictionary = {
 }
 
 static func rand():
+	print(MonsterDB.DATA.keys())
 	return MonsterDB.DATA.keys().pick_random()
