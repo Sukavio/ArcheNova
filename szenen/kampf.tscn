@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://d214fq4hq7n0q"]
 
-[ext_resource type="Script" path="res://szenen/kampf.gd" id="1_gx21j"]
+[ext_resource type="Script" path="res://szenen/skripts/kampf.gd" id="1_gx21j"]
 [ext_resource type="Texture2D" uid="uid://bi7i3g2kvp8ur" path="res://assets/background/kampf.webp" id="1_thqgu"]
 [ext_resource type="PackedScene" uid="uid://dotkf8jmm2drk" path="res://szenen/vertrauter.tscn" id="1_wbghr"]
 [ext_resource type="PackedScene" uid="uid://b6et5gurmx141" path="res://szenen/gegner.tscn" id="2_0h6xi"]
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="4_x6ked"]
 [ext_resource type="PackedScene" uid="uid://xbcb7w5xi5sh" path="res://szenen/dice.tscn" id="5_lp7pc"]
-[ext_resource type="Script" path="res://szenen/DiceTray.gd" id="5_r8g1j"]
+[ext_resource type="Script" path="res://szenen/skripts/DiceTray.gd" id="5_r8g1j"]
 
 [sub_resource type="Theme" id="Theme_28dro"]
 
