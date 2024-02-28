@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6et5gurmx141"]
+[gd_scene load_steps=14 format=3 uid="uid://b6et5gurmx141"]
 
 [ext_resource type="Script" path="res://szenen/skripts/gegner.gd" id="1_83tj0"]
 [ext_resource type="LabelSettings" uid="uid://pe7gqgwcvtjx" path="res://labelSettings/name_label_settings.tres" id="2_3m8cf"]
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="3_y2umm"]
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_qwcfp"]
 [ext_resource type="Script" path="res://szenen/skripts/Label.gd" id="5_hdfae"]
-[ext_resource type="Texture2D" path="res://assets/monster/Dragoblin.png" id="6_m6c6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54ldb"]
 bg_color = Color(0, 0.478431, 0.0862745, 1)
@@ -148,7 +147,6 @@ progress_bar = NodePath("..")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
-texture = ExtResource("6_m6c6t")
 expand_mode = 2
 stretch_mode = 4
 

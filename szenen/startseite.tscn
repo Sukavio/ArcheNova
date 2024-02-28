@@ -43,12 +43,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 alignment = 1
+bezeichnung = "Lunara"
 hp = 2
 atk = 7
 speed = 6
 def = 8
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

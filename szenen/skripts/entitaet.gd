@@ -21,7 +21,7 @@ const element_bonus = 1
 @export_enum("hp", "atk", "speed", "magic", "def") var ivPro: String = 'speed'
 @export_enum("hp", "atk", "speed", "magic", "def") var ivNeg: String = 'speed'
 
-@export() var angriff: Angriff
+var angriff: Array[Angriff]
 
 var hp_value
 	
@@ -72,6 +72,9 @@ func _process(_delta):
 	%Avatar/VBoxContainer/Def.value = totalDef()
 	%LP.max_value = totalHP() * hp_scale
 	%LP.value = hp_value
+	
+func rand_IV():
+	return ["hp", "atk", "speed", "magic", "def"].pick_random()
 	
 func totalHP():
 	return maxi(hp + get_iv_bonus("hp") + get_element_bonus(Enums.Element.Wood), 2)

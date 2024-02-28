@@ -1,6 +1,5 @@
 extends HBoxContainer
 
-
 var dices = preload("res://szenen/dice.tscn")
 
 var _pause_scene = false
@@ -14,27 +13,29 @@ var held = 0
 signal results_ready
 
 func _on_atk_1_mouse_entered():
-	change_dices(5)
-
+	if %Atk1.disabled == false:
+		change_dices((%Kampf.spieler as Entitaet).angriff[0].dices)
 
 func _on_atk_2_mouse_entered():
-	change_dices(3)
-
+	if %Atk2.disabled == false:
+		change_dices((%Kampf.spieler as Entitaet).angriff[1].dices)
 
 func _on_atk_3_mouse_entered():
-	change_dices(1)
+	if %Atk3.disabled == false:
+		change_dices((%Kampf.spieler as Entitaet).angriff[2].dices)
 
 func _on_atk_1_pressed():
-	auswerten(1)
+	auswerten(0)
 
 func _on_atk_2_pressed():
-	auswerten(2)
+	auswerten(1)
 
 func _on_atk_3_pressed():
-	auswerten(3)
+	auswerten(2)
 
-func change_dices(count: int):
-	if !_pause_scene:
+func change_dices(count: int, force: bool = false):
+	if !_pause_scene || force:
+		get_parent().custom_minimum_size = Vector2(count * 100, 100)
 		var dice_counts = %DiceTray.get_child_count()
 		if dice_counts != count:
 			if dice_counts > count:
@@ -68,10 +69,10 @@ func auswerten(moveNr: int):
 	results_ready.emit(moveNr)
 		
 func next(dices: int):
-	change_dices(dices)
+	change_dices(dices, true)
 	for x in %DiceTray.get_children():
 		x.roll()
-	auswerten(1)
+	auswerten(0)
 		
 func unpause():
 	_pause_scene = false

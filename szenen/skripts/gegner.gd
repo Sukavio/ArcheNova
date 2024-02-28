@@ -21,7 +21,7 @@ func change_monster(monsterDaten: Array):
 	def = monsterDaten[5]
 	typ = monsterDaten[7]
 	stufe = monsterDaten[8]
-	angriff = MonsterDB.ATTACK.get(monsterDaten[9])
+	angriff.append(AttackeDB.DATA.get(monsterDaten[9]))
 	random()
 	ivPro = rand_IV()
 	ivNeg = rand_IV()
@@ -36,7 +36,6 @@ func change_monster(monsterDaten: Array):
 		$Avatar/Alpha.visible = false
 	if legendary:
 		bezeichnung = str("Legendäres ", bezeichnung)
-	hp_value = totalHP() * hp_scale
 	$Avatar.texture = load(str("res://assets/monster/", monsterDaten[8], "/", monsterDaten[0], ".png"))
 	$Avatar.flip_h = monsterDaten[6]
 	reload()
@@ -45,9 +44,6 @@ func random():
 	legendary = randi_range(1, 10) > 9
 	alpha = randi_range(1, 10) > 9
 	raid = randi_range(1, 10) > 9
-	
-func rand_IV():
-	return ["hp", "atk", "speed", "magic", "def"].pick_random()
 	
 func legendary_bonus():
 	return 2 if legendary else 0

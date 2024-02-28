@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="3_wsqvi"]
 [ext_resource type="LabelSettings" uid="uid://nkhyhk68h2y0" path="res://labelSettings/progressbar_label_settings.tres" id="4_tyqwn"]
 [ext_resource type="Script" path="res://szenen/skripts/Label.gd" id="5_jvqru"]
-[ext_resource type="Texture2D" uid="uid://c7ftdwymqk4vb" path="res://assets/vertraute/tokens/mage_waschbaer.png" id="5_yiim0"]
+[ext_resource type="Texture2D" path="res://assets/vertraute/tokens/mage_waschbaer.png" id="5_yiim0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54ldb"]
 bg_color = Color(0, 0.478431, 0.0862745, 1)

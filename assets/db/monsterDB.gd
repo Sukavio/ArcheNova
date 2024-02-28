@@ -1,11 +1,10 @@
 class_name MonsterDB extends Node
 
-const Angriff = preload("res://szenen/skripts/angriff.gd")
+const AttackeDB = preload("res://assets/db/attackeDB.gd")
 
-# [0,  1,   2,     3,     4,   5,    6,    7,       8,     9
-# [LP, ATK, Speed, Magic, DEF, flip, Lore, Element, Stufe, Angriff]
+# [0,    1,  2,   3,     4,     5,   6,    8,       9,     10     ]
+# [Name, LP, ATK, Speed, Magic, DEF, flip, Element, Stufe, Angriff]
 enum {AbyssalShadow, BreezyWooler, CelestialGuardian, CluckstertheMystic, CrystalWyrm, DeathWitch, Dragoblin, EternalFrostWarden, FlameheartBeast, ForestFidget, LuminousBloom, MeadowMischief, MoonlightHopper, NightsongSpecter, Phoenix, StormbringerWyrm, StormscaleLeviathan, Thunderhoof, TimeWeaver, VoidStalker, WhisperingShade, Widbear, Zephyrclaw}
-enum Attacks {Wollen, Pick, CrystalBite, FireBreath, Magic, Blast, JumpKick, Ram}
 
 # 5 Elements
 # 8 Fire - Fire, Monster, Shadow
@@ -16,21 +15,21 @@ enum Attacks {Wollen, Pick, CrystalBite, FireBreath, Magic, Blast, JumpKick, Ram
 
 const DATA: Dictionary = {
 	 BreezyWooler:
-		 ['BreezyWooler', 2, 3, 1, 2, 1, false, Enums.Element.Wood, 1, Attacks.Wollen],
+		 ['BreezyWooler', 2, 3, 1, 2, 1, false, Enums.Element.Wood, 1, AttackeDB.Wollen],
 	 CluckstertheMystic:
-		 ['CluckstertheMystic', 2, 1, 2, 3, 1, false, Enums.Element.Wood, 1, Attacks.Pick],
+		 ['CluckstertheMystic', 2, 1, 2, 3, 1, false, Enums.Element.Wood, 1, AttackeDB.Pick],
 	 CrystalWyrm:
-		 ['CrystalWyrm', 1, 3, 3, 1, 1, false, Enums.Element.Metal, 1, Attacks.CrystalBite],
+		 ['CrystalWyrm', 1, 3, 3, 1, 1, false, Enums.Element.Metal, 1, AttackeDB.CrystalBite],
 	 Dragoblin:
-		 ['Dragoblin', 2, 2, 1, 2, 2, true, Enums.Element.Fire, 1, Attacks.FireBreath],
+		 ['Dragoblin', 2, 2, 1, 2, 2, true, Enums.Element.Fire, 1, AttackeDB.FireBreath],
 	 ForestFidget:
-		 ['ForestFidget', 2, 1, 2, 1, 3, false, Enums.Element.Wood, 1, Attacks.Magic],
+		 ['ForestFidget', 2, 1, 2, 1, 3, false, Enums.Element.Wood, 1, AttackeDB.Magic],
 	 MeadowMischief:
-		 ['MeadowMischief', 2, 2, 3, 1, 1, false, Enums.Element.Wood, 1, Attacks.Blast],
+		 ['MeadowMischief', 2, 2, 3, 1, 1, false, Enums.Element.Wood, 1, AttackeDB.Blast],
 	 MoonlightHopper:
-		 ['MoonlightHopper', 2, 3, 1, 1, 2, true, Enums.Element.Water, 1, Attacks.JumpKick],
+		 ['MoonlightHopper', 2, 3, 1, 1, 2, true, Enums.Element.Water, 1, AttackeDB.JumpKick],
 	 Widbear:
-		 ['Widbear', 2, 2, 3, 1, 1, true, Enums.Element.Wood, 1, Attacks.Ram],
+		 ['Widbear', 2, 2, 3, 1, 1, true, Enums.Element.Wood, 1, AttackeDB.Ram],
 	 AbyssalShadow:
 		 ['AbyssalShadow', 5, 3, 3, 4, 4, false, Enums.Element.Earth, 2],
 	 EternalFrostWarden:
@@ -61,25 +60,6 @@ const DATA: Dictionary = {
 		 ['VoidStalker', 6, 5, 7, 5, 6, true, Enums.Element.Earth, 3],
 	 Zephyrclaw:
 		 ['Zephyrclaw', 5, 5, 7, 5, 7, false, Enums.Element.Metal, 3],
-}
-
-static var ATTACK = {
-	Attacks.Wollen:
-		Angriff.new('Wollen', Enums.Element.Wood, 5, 'Wollt den Gegner ein'),
-	Attacks.Pick:
-		Angriff.new('Pick', Enums.Element.Wood, 3, 'Wollt den Gegner ein'),
-	Attacks.CrystalBite:
-		Angriff.new('CrystalBite', Enums.Element.Metal, 2, 'Wollt den Gegner ein'),
-	Attacks.FireBreath:
-		Angriff.new('FireBreath', Enums.Element.Fire, 6, 'Wollt den Gegner ein'),
-	Attacks.Magic:
-		Angriff.new('Magic', Enums.Element.Wood, 1, 'Wollt den Gegner ein'),
-	Attacks.Blast:
-		Angriff.new('Blast', Enums.Element.Wood, 8, 'Wollt den Gegner ein'),
-	Attacks.JumpKick:
-		Angriff.new('JumpKick', Enums.Element.Water, 4, 'Wollt den Gegner ein'),
-	Attacks.Ram:
-		Angriff.new('Ram', Enums.Element.Wood, 2, 'Wollt den Gegner ein'),
 }
 
 static func rand(stufe: int):

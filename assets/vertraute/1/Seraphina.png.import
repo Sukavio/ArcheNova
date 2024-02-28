@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ftdwymqk4vb"
-path="res://.godot/imported/mage_waschbaer.png-ad450e6320dc633cb25981895543a3c7.ctex"
+uid="uid://c8mlhd8xvvp4w"
+path="res://.godot/imported/Seraphina.png-8bed6907f2c9f9ba366e4dd011806f09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vertraute/tokens/mage_waschbaer.png"
-dest_files=["res://.godot/imported/mage_waschbaer.png-ad450e6320dc633cb25981895543a3c7.ctex"]
+source_file="res://assets/vertraute/1/Seraphina.png"
+dest_files=["res://.godot/imported/Seraphina.png-8bed6907f2c9f9ba366e4dd011806f09.ctex"]
 
 [params]
 
