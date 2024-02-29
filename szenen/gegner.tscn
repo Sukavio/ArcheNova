@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b6et5gurmx141"]
 
-[ext_resource type="Script" path="res://szenen/skripts/gegner.gd" id="1_83tj0"]
+[ext_resource type="Script" path="res://szenen/skripts/entities/gegner.gd" id="1_83tj0"]
 [ext_resource type="LabelSettings" uid="uid://pe7gqgwcvtjx" path="res://labelSettings/name_label_settings.tres" id="2_3m8cf"]
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="3_y2umm"]
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_qwcfp"]

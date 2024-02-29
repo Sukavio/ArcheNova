@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://xbcb7w5xi5sh"]
 
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_ai0yl"]
-[ext_resource type="Script" path="res://szenen/skripts/dice.gd" id="2_tck56"]
+[ext_resource type="Script" path="res://szenen/skripts/kampf/dice.gd" id="2_rj255"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdjjl"]
 bg_color = Color(1, 1, 1, 1)
@@ -44,7 +44,7 @@ theme = SubResource("Theme_mcdwd")
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_tck56")
+script = ExtResource("2_rj255")
 
 [node name="Magie" type="Label" parent="."]
 layout_mode = 0

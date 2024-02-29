@@ -4,13 +4,7 @@ var dices = preload("res://szenen/dice.tscn")
 
 var _pause_scene = false
 
-var hit = 0
-var krit = 0
-var status = 0
-var magic = 0
-var held = 0
-
-signal results_ready
+signal results_ready(moveNr: int, result: DiceRollResult)
 
 func _on_atk_1_mouse_entered():
 	if %Atk1.disabled == false:
@@ -49,24 +43,20 @@ func change_dices(count: int, force: bool = false):
 					
 func auswerten(moveNr: int):
 	_pause_scene = true
-	hit = 0
-	krit = 0
-	status = 0
-	magic = 0
-	held = 0
+	var result = DiceRollResult.new()
 	for dice in %DiceTray.get_children():
 		dice.stop()
 		if dice.hit():
-			hit += 1
+			result.hit += 1
 		if dice.krit():
-			krit += 1
+			result.krit += 1
 		if dice.status():
-			status += 1
+			result.status += 1
 		if dice.magic:
-			magic += 1
+			result.magic += 1
 		if dice.held:
-			held += 1
-	results_ready.emit(moveNr)
+			result.held += 1
+	results_ready.emit(moveNr, result)
 		
 func next(dices: int):
 	change_dices(dices, true)

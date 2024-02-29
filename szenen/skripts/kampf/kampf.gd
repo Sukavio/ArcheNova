@@ -56,31 +56,22 @@ func render_player_attacks():
 			%Atk3/VBoxContainer.visible = false
 			%Atk3.disabled = true
 
-func _on_dice_tray_results_ready(moveNr: int):
+func _on_dice_tray_results_ready(moveNr: int, result: DiceRollResult):
 	match status:
 		FightStatus.Player:
-			var damage = maxi(spieler.atk + %DiceTray.hit - gegner.totalDef(), 0) + %DiceTray.krit * 2
-			match moveNr:
-				1:
-					damage += %DiceTray.magic
-				2:
-					damage += %DiceTray.magic * spieler.magic
-				3:
-					spieler.hp_value += %DiceTray.hit + %DiceTray.krit * 2
-			gegner.hp_value -= damage
+			var damage = Schadensberechnung._calculiere_schaden(spieler, gegner, moveNr, result)
 			openDialog = true
 			%Dialog.text = str(spieler.name, ' greift ', gegner.bezeichnung, ' an und macht ', damage, ' Schaden!')
-			if gegner.hp_value <= 0:
+			if !gegner.alive:
 				%Dialog.text += str('\n', gegner.bezeichnung, " ist gestorben!")
 				gegner.queue_free()
 				status = FightStatus.Win
 			else:
 				status = FightStatus.Enemy
 		FightStatus.Enemy:
-			var damage = maxi(gegner.totalAtk() + %DiceTray.hit - spieler.def, 0) + %DiceTray.krit * 2
-			spieler.hp_value -= damage
+			var damage = Schadensberechnung._calculiere_schaden(gegner, spieler, moveNr, result)
 			%Dialog.text = str(gegner.bezeichnung, ' greift ', spieler.bezeichnung, ' mit ', gegner.angriff[0].bezeichnung, ' an und macht ', damage, ' Schaden!')
-			if spieler.hp_value <= 0:
+			if !spieler.alive:
 				%Dialog.text += str('\n', spieler.name, " ist gestorben!")
 				spieler.queue_free()
 				status = FightStatus.Lose

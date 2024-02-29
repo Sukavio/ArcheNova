@@ -1,6 +1,6 @@
 class_name Entitaet extends VBoxContainer
 
-const Angriff = preload("res://szenen/skripts/angriff.gd")
+const Angriff = preload("res://szenen/skripts/kampf/angriff.gd")
 
 const hp_scale = 10
 const iv_positiv = 2
@@ -20,6 +20,8 @@ const element_bonus = 1
 
 @export_enum("hp", "atk", "speed", "magic", "def") var ivPro: String = 'speed'
 @export_enum("hp", "atk", "speed", "magic", "def") var ivNeg: String = 'speed'
+
+var alive = true
 
 var angriff: Array[Angriff]
 
