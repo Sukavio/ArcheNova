@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn0ke5x6wcdxr"]
+
+[ext_resource type="Script" path="res://szenen/reise.gd" id="1_42d8r"]
+[ext_resource type="Texture2D" uid="uid://caqk8kgy5c73o" path="res://assets/background/background.webp" id="1_hrob2"]
+[ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="2_7s7d4"]
+[ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_4061h"]
+
+[sub_resource type="Theme" id="Theme_hetsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvpxr"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.34902, 0.6, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7qye"]
+content_margin_top = 106.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_e1lxq"]
+font = ExtResource("4_4061h")
+font_size = 57
+font_color = Color(0.819608, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Reise" type="Node2D"]
+script = ExtResource("1_42d8r")
+
+[node name="Hintergrund" type="Sprite2D" parent="."]
+position = Vector2(1, 7.15256e-07)
+scale = Vector2(1.07199, 1.05469)
+texture = ExtResource("1_hrob2")
+centered = false
+
+[node name="Spielbereich" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 200)
+offset_top = 763.0
+offset_right = 1916.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_hetsx")
+color = Color(0, 0, 0, 0.639216)
+
+[node name="MarginContainer" type="MarginContainer" parent="Spielbereich"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = -11.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBereich" type="HBoxContainer" parent="Spielbereich/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Dialog" type="RichTextLabel" parent="Spielbereich/MarginContainer/MenuBereich"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvpxr")
+bbcode_enabled = true
+text = "Du hast 30 Schaden gemacht!"
+fit_content = true
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Menu" type="VBoxContainer" parent="Spielbereich/MarginContainer/MenuBereich"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Held" type="Button" parent="Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7s7d4")
+text = "Held
+"
+
+[node name="Rucksack" type="Button" parent="Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7s7d4")
+text = "Rucksack
+"
+
+[node name="Vertraute" type="Button" parent="Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7s7d4")
+text = "Vertraute"
+
+[node name="Bestrarium" type="Button" parent="Spielbereich/MarginContainer/MenuBereich/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7s7d4")
+text = "Bestrarium"
+
+[node name="Titel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 1927.0
+offset_bottom = 163.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 15.01
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7qye")
+text = "Titel"
+label_settings = SubResource("LabelSettings_e1lxq")
+horizontal_alignment = 1
