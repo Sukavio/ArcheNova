@@ -1,17 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn0ke5x6wcdxr"]
+[gd_scene load_steps=10 format=3 uid="uid://cn0ke5x6wcdxr"]
 
 [ext_resource type="Script" path="res://szenen/reise.gd" id="1_42d8r"]
 [ext_resource type="Texture2D" uid="uid://caqk8kgy5c73o" path="res://assets/background/background.webp" id="1_hrob2"]
 [ext_resource type="Theme" uid="uid://dcsergoogpj0s" path="res://assets/themes/archenova.tres" id="2_7s7d4"]
 [ext_resource type="FontFile" uid="uid://cqai8wx65s50j" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_4061h"]
+[ext_resource type="StyleBox" uid="uid://dj3ywj51shw3t" path="res://assets/themes/greenbackground_whiteborder.tres" id="4_nchfr"]
 
 [sub_resource type="Theme" id="Theme_hetsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvpxr"]
-content_margin_left = 15.0
-content_margin_top = 15.0
-content_margin_right = 15.0
-content_margin_bottom = 15.0
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
 bg_color = Color(0.34902, 0.6, 0, 1)
 border_width_left = 3
 border_width_top = 3
@@ -67,15 +68,20 @@ theme_override_constants/separation = 10
 
 [node name="Dialog" type="RichTextLabel" parent="Spielbereich/MarginContainer/MenuBereich"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_7s7d4")
+theme_override_constants/line_separation = 15
 theme_override_font_sizes/normal_font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_dvpxr")
 bbcode_enabled = true
-text = "Du hast 30 Schaden gemacht!"
-fit_content = true
+text = "Du wurdest in dieses Land gerufen, um mit den anderen Helden die Wellen, die Woche für Woche auf unsere Heimat losrennen, zu beseitigen. Dafür fährst du mit der ArcheNova Richtung Osten, an den Ort, an dem die Wellen ihren Ursprung nehmen und das Unheil beseitigt, um die Wellen aufzuhalten. Hierfür stellen wir euch 20 Goldmünzen und 2 Vertreute zu Verfügung die euch unterstützen. Wählt euch aus, welche Vertrauten ihr euch aussucht."
+scroll_following = true
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+visible_characters = 320
+visible_ratio = 0.735632
 
 [node name="Menu" type="VBoxContainer" parent="Spielbereich/MarginContainer/MenuBereich"]
 custom_minimum_size = Vector2(400, 0)
@@ -108,6 +114,19 @@ size_flags_vertical = 3
 theme = ExtResource("2_7s7d4")
 text = "Bestrarium"
 
+[node name="Speaker" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 5.0
+offset_top = 730.0
+offset_right = 256.0
+offset_bottom = 784.0
+theme = ExtResource("2_7s7d4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("4_nchfr")
+text = "Königin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Titel" type="Label" parent="."]
 unique_name_in_owner = true
 offset_right = 1927.0
@@ -118,3 +137,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_j7qye")
 text = "Titel"
 label_settings = SubResource("LabelSettings_e1lxq")
 horizontal_alignment = 1
+
+[node name="TextAnimation" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="gui_input" from="Spielbereich/MarginContainer/MenuBereich/Dialog" to="." method="_on_dialog_gui_input"]
+[connection signal="timeout" from="TextAnimation" to="." method="_on_text_animation_timeout"]

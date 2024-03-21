@@ -9,7 +9,7 @@ var ko := false
 @export() var raid = false
 
 func _ready():
-	change_monster(MonsterDB.rand(1));
+	change_monster(GameManager.monster[0]);
 	reload()
 
 func change_monster(monsterDaten: Array):
@@ -22,7 +22,9 @@ func change_monster(monsterDaten: Array):
 	typ = monsterDaten[7]
 	stufe = monsterDaten[8]
 	angriff.append(AttackeDB.DATA.get(monsterDaten[9]))
-	random()
+	legendary = GameManager.monster[1]
+	alpha = GameManager.monster[2]
+	raid = GameManager.monster[3]
 	ivPro = rand_IV()
 	ivNeg = rand_IV()
 	if raid:
@@ -39,11 +41,6 @@ func change_monster(monsterDaten: Array):
 	$Avatar.texture = load(str("res://assets/monster/", monsterDaten[8], "/", monsterDaten[0], ".png"))
 	$Avatar.flip_h = monsterDaten[6]
 	reload()
-	
-func random():
-	legendary = randi_range(1, 10) > 9
-	alpha = randi_range(1, 10) > 9
-	raid = randi_range(1, 10) > 9
 	
 func legendary_bonus():
 	return 2 if legendary else 0

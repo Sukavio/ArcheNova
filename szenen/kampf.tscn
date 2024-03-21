@@ -35,7 +35,7 @@ texture = ExtResource("1_thqgu")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Kampf" type="MarginContainer" parent="." node_paths=PackedStringArray("spieler", "gegner")]
+[node name="Kampf" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -44,8 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gx21j")
-spieler = NodePath("VBoxContainer/BattleView/VertrauterWrapper/Vertrauter")
-gegner = NodePath("VBoxContainer/BattleView/GegnerWrapper/Gegner")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Kampf"]
 layout_mode = 2

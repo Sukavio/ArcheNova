@@ -1,13 +1,12 @@
 extends PanelContainer
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		_on_start_pressed()
-	if Input.is_action_just_pressed("ui_end") || Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("an_ende"):
 		_on_beenden_pressed()
 
 func _on_beenden_pressed():
 	get_tree().quit(0)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://szenen/kampf.tscn")
+	GameManager.new_game()
+	get_tree().change_scene_to_file("res://szenen/reise.tscn")

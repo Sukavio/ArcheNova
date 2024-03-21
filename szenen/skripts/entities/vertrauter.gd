@@ -1,7 +1,7 @@
 class_name Vertrauter extends Entitaet
 
 func _ready():
-	change_vertrauter(VertrauteDB.rand());
+	change_vertrauter(VertrauteDB.DATA.get(GameManager.vertraute[0]));
 	reload()
 	
 func change_vertrauter(vertrauteDaten: Array):

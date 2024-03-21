@@ -1,7 +1,7 @@
 class_name Kampf extends MarginContainer
 
-@export var spieler: Vertrauter
-@export var gegner: Gegner
+@onready var spieler = $VBoxContainer/BattleView/VertrauterWrapper/Vertrauter as Vertrauter
+@onready var gegner = $VBoxContainer/BattleView/GegnerWrapper/Gegner as Gegner
 
 enum FightStatus {Player, Enemy, Win, Lose, End}
 
@@ -13,11 +13,6 @@ var enemyAttack = false
 
 func _ready():
 	spieler.flip()
-	spieler.hp = randi_range(1, 5)
-	spieler.atk = randi_range(1, 5)
-	spieler.speed = randi_range(1, 5)
-	spieler.magic = randi_range(1, 5)
-	spieler.def = randi_range(1, 5)
 	render_player_attacks()
 	var starter = ''
 	if spieler.speed > gegner.speed:
@@ -91,8 +86,11 @@ func _on_dialog_gui_input(event):
 				FightStatus.Win:
 					%Dialog.text = 'Du hast gewonnen!'
 					status = FightStatus.End
+					GameManager.eventFinished = true
 				FightStatus.Lose:
 					%Dialog.text = 'Du hast verloren!'
 					status = FightStatus.End
+					GameManager.eventFinished = true
+					GameManager.gameOver = true
 				FightStatus.End:
-					get_tree().change_scene_to_file("res://szenen/startseite.tscn")
+					get_tree().change_scene_to_file("res://szenen/reise.tscn")
