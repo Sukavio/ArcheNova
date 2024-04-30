@@ -80,7 +80,7 @@ text = "Du wurdest in dieses Land gerufen, um mit den anderen Helden die Wellen,
 scroll_following = true
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-visible_characters = 320
+visible_characters = 319
 visible_ratio = 0.735632
 
 [node name="Menu" type="VBoxContainer" parent="Spielbereich/MarginContainer/MenuBereich"]
